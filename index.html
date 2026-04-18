@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luminara Gems | Ethical Tanzanian Gemstones | Nexlora Enterprise Ltd</title>
+  <meta name="description" content="Luminara Gems — ethically sourced Tanzanite, Mahenge Spinel, Ruby & more from Tanzania. Expert gemstone sourcing by Wildlife Conservationist Jonathan Ghikas."/>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="canonical" href="https://luminaragems.com/"/>
+  <meta property="og:title" content="Luminara Gems | Ethical Tanzanian Gemstones | Nexlora Enterprise Ltd"/>
+  <meta property="og:description" content="Luminara Gems — ethically sourced Tanzanite, Mahenge Spinel, Ruby & more from Tanzania. Expert gemstone sourcing by Wildlife Conservationist Jonathan Ghikas."/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+<style>
+.hero-section{position:relative;height:100vh;min-height:600px;overflow:hidden;margin-top:74px}
+.slides{position:relative;height:100%}
+.slide{position:absolute;inset:0;display:flex;align-items:flex-end;opacity:0;transition:opacity 1.4s ease}
+.slide.active{opacity:1}
+.slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 8s ease}
+.slide.active .slide-bg{transform:scale(1.06)}
+.slide-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,7,9,.2) 0%,rgba(7,7,9,.1) 40%,rgba(7,7,9,.75) 78%,rgba(7,7,9,.96) 100%)}
+.slide-content{position:relative;z-index:2;padding:0 80px 90px;max-width:860px}
+.slide-tag{font-size:.56rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
+.slide-content h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5.5vw,4.6rem);font-weight:300;line-height:1.1;color:var(--white);margin-bottom:13px}
+.slide-content p{font-size:.8rem;color:rgba(221,216,205,.72);max-width:500px;line-height:1.75;margin-bottom:26px}
+.slide-indicators{position:absolute;bottom:44px;right:80px;display:flex;gap:10px;z-index:10}
+.dot{width:32px;height:2px;background:rgba(221,216,205,.25);cursor:pointer;transition:all .4s;border:none;padding:0}
+.dot.active{background:var(--gold);width:52px}
+.hero-scroll{position:absolute;bottom:44px;left:80px;z-index:10;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollAnim 2.2s ease-in-out infinite}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.scroll-label{font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-lr}
+.trust-bar{background:var(--bg3);padding:16px 80px;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+.trust-item{display:flex;align-items:center;gap:7px}
+.trust-item span{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:44px}
+.pillar-card{position:relative;overflow:hidden;aspect-ratio:4/3;display:block;text-decoration:none}
+.pillar-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s ease}
+.pillar-card:hover .pillar-bg{transform:scale(1.08)}
+.pillar-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,9,.92) 0%,rgba(7,7,9,.3) 55%,transparent 100%)}
+.pillar-body{position:absolute;bottom:0;left:0;right:0;padding:24px 22px;z-index:2}
+.pillar-logo{height:34px;width:auto;object-fit:contain;object-position:left;margin-bottom:9px;filter:brightness(1.2)}
+.pillar-name{font-family:'Cinzel',serif;font-size:.95rem;font-weight:600;color:var(--gold);letter-spacing:.1em;margin-bottom:4px}
+.pillar-desc{font-size:.68rem;color:rgba(221,216,205,.68);line-height:1.6;margin-bottom:8px}
+.pillar-link{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px;transition:gap .3s}
+.pillar-card:hover .pillar-link{gap:10px}
+.vault-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:44px}
+.vault-item{position:relative;overflow:hidden;display:block;text-decoration:none}
+.vault-item img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:transform .8s ease}
+.vault-item:hover img{transform:scale(1.07)}
+.vault-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,7,9,.88) 0%,transparent 55%);display:flex;align-items:flex-end;padding:18px}
+.vi-label{font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.vi-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--white)}
+.stats-bar{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 80px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.stat-item{text-align:center}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold);line-height:1}
+.stat-label{font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+.safari-teaser{position:relative;overflow:hidden;min-height:540px;display:flex;align-items:center}
+.safari-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.safari-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(7,7,9,.92) 0%,rgba(7,7,9,.55) 60%,transparent 100%)}
+.safari-content{position:relative;z-index:2;padding:80px;max-width:600px}
+.safari-tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:22px 0 28px}
+.tier-pill{border:1px solid var(--border);padding:12px 14px;background:rgba(13,13,16,.7);text-decoration:none;color:inherit;display:block;transition:border-color .3s}
+.tier-pill:hover{border-color:rgba(201,168,76,.4)}
+.tp-num{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.tp-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:300;color:var(--white)}
+.tp-price{font-size:.62rem;color:var(--muted);margin-top:3px}
+.about-strip{background:var(--bg3);border-top:1px solid var(--border);padding:80px}
+.about-strip-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:80px;align-items:center}
+.about-portrait{position:relative}
+.about-portrait img{width:100%;aspect-ratio:1;object-fit:cover;object-position:top;filter:grayscale(15%)}
+.about-portrait::before{content:'';position:absolute;inset:-8px 8px 8px -8px;border:1px solid var(--border);z-index:-1}
+.about-portrait::after{content:'LICENSED WILDLIFE CONSERVATIONIST';position:absolute;bottom:14px;left:-6px;background:var(--black);color:var(--gold);font-size:.46rem;letter-spacing:.22em;padding:4px 12px;border:1px solid var(--border);text-transform:uppercase}
+@media(max-width:900px){
+  .slide-content{padding:0 24px 68px}
+  .hero-scroll,.slide-indicators{display:none}
+  .pillars-grid{grid-template-columns:1fr}
+  .pillar-card{aspect-ratio:16/9}
+  .vault-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-bar{grid-template-columns:repeat(2,1fr);padding:28px 24px;gap:24px}
+  .safari-content{padding:56px 24px;max-width:100%}
+  .safari-tiers{grid-template-columns:1fr}
+  .trust-bar{padding:14px 20px;gap:16px}
+  .about-strip{padding:60px 24px}
+  .about-strip-grid{grid-template-columns:1fr;gap:32px}
+  .pillars-section{padding:60px 24px}
+}
+@media(max-width:600px){
+  .slide-content{padding:0 16px 60px}
+  .vault-grid{grid-template-columns:1fr 1fr}
+  .stats-bar{grid-template-columns:1fr 1fr;padding:22px 14px;gap:16px}
+  .stat-num{font-size:2.2rem}
+  .trust-bar{padding:12px 14px;gap:12px}
+  .trust-item span{font-size:.5rem}
+}
+</style>
+</head>
+<body>
+<div id="page-loader">
+  <div class="loader-gem"></div>
+  <div class="loader-text">LUMINARA</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo-luminara.jpg" alt="Luminara Gems" class="nav-logo-img" onerror="this.style.display='none'"/>
+    <div class="nav-logo-text">
+      <span class="logo-main">LUMINARA GEMS</span>
+      <span class="logo-sub">A Nexlora Enterprise</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-nk="h" class="active">Home</a></li>
+    <li><a href="vault.html" data-nk="v">The Vault</a></li>
+    <li><a href="gemstone-safaris.html" data-nk="s">Gem Safaris</a></li>
+    <li><a href="journal.html" data-nk="j">Journal</a></li>
+    <li><a href="sanaa-chains.html" data-nk="sc">Sanaa Chains</a></li>
+    <li><a href="about.html" data-nk="a">About</a></li>
+    <li><a href="gallery.html" data-nk="g">Gallery</a></li>
+    <li><a href="contact.html" data-nk="c">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-wrap">
+      <button class="lang-toggle"><span class="lang-code">EN</span> ▾</button>
+      <div class="lang-dropdown">
+        <a href="#" data-lang="en">🇬🇧 English</a>
+        <a href="#" data-lang="fr">🇫🇷 Français</a>
+        <a href="#" data-lang="de">🇩🇪 Deutsch</a>
+        <a href="#" data-lang="ru">🇷🇺 Русский</a>
+        <a href="#" data-lang="tr">🇹🇷 Türkçe</a>
+      </div>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" data-nk="h">Home</a>
+  <a href="vault.html" data-nk="v">The Vault</a>
+  <a href="gemstone-safaris.html" data-nk="s">Gem Safaris</a>
+  <a href="journal.html" data-nk="j">Journal</a>
+  <a href="sanaa-chains.html" data-nk="sc">Sanaa Chains</a>
+  <a href="about.html" data-nk="a">About</a>
+  <a href="gallery.html" data-nk="g">Gallery</a>
+  <a href="contact.html" data-nk="c">Contact</a>
+  <div class="mobile-divlogos">
+    <img src="images/logo-luminara.jpg" alt="Luminara" onerror="this.style.display='none'"/>
+    <img src="images/logo-ghikas.png" alt="Ghikas Adventures" onerror="this.style.display='none'"/>
+    <img src="images/logo-sanaa-chains.png" alt="Sanaa Chains" onerror="this.style.display='none'"/>
+  </div>
+</div>
+<!-- HERO -->
+<section class="hero-section" style="padding:0;">
+  <div class="slides">
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://www.earthstreasury.com/wp-content/uploads/2025/08/tanzanite-banner.jpeg');"></div>
+      <div class="slide-content">
+        <span class="slide-tag">01 · Tanzanite · Mererani Hills, Tanzania</span>
+        <h1>From the Earth's<br/>Deepest Blue</h1>
+        <p>Exclusively found at the foot of Kilimanjaro. Sourced by a licensed wildlife conservationist with direct access to Tanzania's finest stones.</p>
+        <a href="vault.html" class="btn-gold">Explore the Vault →</a>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://images.pexels.com/photos/32988666/pexels-photo-32988666.jpeg');"></div>
+      <div class="slide-content">
+        <span class="slide-tag">02 · Tanzanite · The Colour Shift</span>
+        <h1>Buy at the Source.<br/>Stay for the Sunset.</h1>
+        <p>The only gemstone that shifts from sapphire blue to amethyst violet. Conflict-free. Verified by science. Secured on blockchain.</p>
+        <a href="gemstone-safaris.html" class="btn-gold">Gemstone Safaris →</a>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://i.postimg.cc/NMSwwfmz/image-18.jpg');"></div>
+      <div class="slide-content">
+        <span class="slide-tag">03 · Sanaa Chains · Blockchain Provenance</span>
+        <h1>Every Stone<br/>Has a Story.</h1>
+        <p>Provenance secured on-chain. Conflict-free guarantees backed by Tanzania's mineral authority and the Tucson Tanzanite Protocol.</p>
+        <a href="sanaa-chains.html" class="btn-gold">Learn More →</a>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://images.pexels.com/photos/18000463/pexels-photo-18000463.jpeg');"></div>
+      <div class="slide-content">
+        <span class="slide-tag">04 · Gemstone Safari · 4 Tiers</span>
+        <h1>Mine to Market.<br/>Then to Memory.</h1>
+        <p>Four tailored safari tiers — from focused single-stone sourcing to luxury expeditions with Ghikas Adventures.</p>
+        <a href="gemstone-safaris.html" class="btn-gold">View Safari Tiers →</a>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg" style="background-image:url('https://images.pexels.com/photos/19171291/pexels-photo-19171291.jpeg');"></div>
+      <div class="slide-content">
+        <span class="slide-tag">05 · Tanzania · The Source</span>
+        <h1>Where Geology<br/>Meets Discovery.</h1>
+        <p>The Great Rift Valley holds Earth's rarest mineral wealth. Our roots in conservation science give us unparalleled access to the source.</p>
+        <a href="about.html" class="btn-gold">Our Story →</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide-indicators">
+    <button class="dot active" aria-label="Slide 1"></button>
+    <button class="dot" aria-label="Slide 2"></button>
+    <button class="dot" aria-label="Slide 3"></button>
+    <button class="dot" aria-label="Slide 4"></button>
+    <button class="dot" aria-label="Slide 5"></button>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-label">Scroll</span></div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span>🔬</span><span>Licensed Wildlife Conservationist</span></div>
+  <div class="trust-item"><span>⛏️</span><span>Mine-to-Market Traceability</span></div>
+  <div class="trust-item"><span>🛡️</span><span>Tucson Tanzanite Protocol</span></div>
+  <div class="trust-item"><span>⛓️</span><span>Blockchain Provenance</span></div>
+  <div class="trust-item"><span>🌍</span><span>Conflict-Free Guaranteed</span></div>
+</div>
+
+<!-- THREE PILLARS -->
+<section class="pillars-section" style="background:var(--bg2);padding:80px;">
+  <span class="section-label reveal">The Nexlora Ecosystem</span>
+  <h2 class="section-title reveal">Three Pillars. One Vision.</h2>
+  <div class="pillars-grid stagger">
+    <a href="index.html" class="pillar-card reveal">
+      <div class="pillar-bg" style="background-image:url('https://www.earthstreasury.com/wp-content/uploads/2025/08/tanzanite-banner.jpeg');"></div>
+      <div class="pillar-overlay"></div>
+      <div class="pillar-body">
+        <img src="images/logo-luminara.jpg" alt="Luminara Gems" class="pillar-logo" onerror="this.style.display='none'"/>
+        <div class="pillar-name">LUMINARA GEMS</div>
+        <p class="pillar-desc">Ethical Tanzanian gemstone sourcing — Tanzanite, Mahenge Spinel, Ruby &amp; more.</p>
+        <span class="pillar-link">Explore →</span>
+      </div>
+    </a>
+    <a href="https://ghikasadventures.com" class="pillar-card reveal" target="_blank" rel="noopener">
+      <div class="pillar-bg" style="background-image:url('https://images.pexels.com/photos/18000463/pexels-photo-18000463.jpeg');"></div>
+      <div class="pillar-overlay"></div>
+      <div class="pillar-body">
+        <img src="images/logo-ghikas.png" alt="Ghikas Adventures" class="pillar-logo" onerror="this.style.display='none'"/>
+        <div class="pillar-name">GHIKAS ADVENTURES</div>
+        <p class="pillar-desc">Luxury eco-safaris across Mikumi, Serengeti &amp; Zanzibar. Guided by a licensed conservationist.</p>
+        <span class="pillar-link">Visit Site →</span>
+      </div>
+    </a>
+    <a href="sanaa-chains.html" class="pillar-card reveal">
+      <div class="pillar-bg" style="background-image:url('https://i.postimg.cc/NMSwwfmz/image-18.jpg');"></div>
+      <div class="pillar-overlay"></div>
+      <div class="pillar-body">
+        <img src="images/logo-sanaa-chains.png" alt="Sanaa Chains" class="pillar-logo" onerror="this.style.display='none'"/>
+        <div class="pillar-name">SANAA CHAINS</div>
+        <p class="pillar-desc">Blockchain platform tokenizing Tanzanian art &amp; gemstone provenance as NFTs.</p>
+        <span class="pillar-link">Learn More →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- VAULT PREVIEW -->
+<section style="padding:100px 80px;background:var(--bg);">
+  <span class="section-label reveal">The Vault</span>
+  <h2 class="section-title reveal">Tanzania's Rarest Treasures</h2>
+  <p class="section-sub reveal">Representative samples and current market opportunities sourced through our licensed Arusha network. Each stone individually verified.</p>
+  <div class="vault-grid stagger">
+    <a href="tanzanite.html" class="vault-item reveal">
+      <img src="https://www.earthstreasury.com/wp-content/uploads/2025/08/tanzanite-banner.jpeg" alt="Tanzanite" loading="lazy"/>
+      <div class="vault-item-overlay"><div><div class="vi-label">Mererani Hills</div><div class="vi-name">Tanzanite</div></div></div>
+    </a>
+    <a href="mahenge-spinel.html" class="vault-item reveal">
+      <img src="https://images.pexels.com/photos/12635442/pexels-photo-12635442.jpeg" alt="Mahenge Spinel" loading="lazy"/>
+      <div class="vault-item-overlay"><div><div class="vi-label">Mahenge Plateau</div><div class="vi-name">Mahenge Spinel</div></div></div>
+    </a>
+    <a href="ruby.html" class="vault-item reveal">
+      <img src="https://images.pexels.com/photos/15684180/pexels-photo-15684180.jpeg" alt="Ruby" loading="lazy"/>
+      <div class="vault-item-overlay"><div><div class="vi-label">Winza &amp; Longido</div><div class="vi-name">Ruby</div></div></div>
+    </a>
+    <a href="tsavorite.html" class="vault-item reveal">
+      <img src="https://images.pexels.com/photos/29986284/pexels-photo-29986284.jpeg" alt="Tsavorite" loading="lazy"/>
+      <div class="vault-item-overlay"><div><div class="vi-label">Diverse Origins</div><div class="vi-name">Tsavorite &amp; More</div></div></div>
+    </a>
+  </div>
+  <div style="margin-top:36px;text-align:center;">
+    <a href="vault.html" class="btn-outline">View Full Vault →</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal"><div class="stat-num">4</div><div class="stat-label">Safari Tiers</div></div>
+  <div class="stat-item reveal"><div class="stat-num">8+</div><div class="stat-label">Gemstone Varieties</div></div>
+  <div class="stat-item reveal"><div class="stat-num">100%</div><div class="stat-label">Conflict-Free</div></div>
+  <div class="stat-item reveal"><div class="stat-num">⛓️</div><div class="stat-label">Blockchain Verified</div></div>
+</div>
+
+<!-- SAFARI TEASER -->
+<section class="safari-teaser" style="padding:0;">
+  <div class="safari-bg" style="background-image:url('https://images.pexels.com/photos/35634915/pexels-photo-35634915.jpeg');"></div>
+  <div class="safari-content">
+    <span class="section-label">Experiential Sourcing · 4 Tiers</span>
+    <h2 class="section-title">Buy at the Source.<br/>Stay for the Sunset.</h2>
+    <p class="section-sub" style="max-width:460px;">Four tailored paths from discovery to legacy — all conflict-free and scientifically guided.</p>
+    <div class="safari-tiers">
+      <a href="gemstone-safaris.html#discovery" class="tier-pill"><div class="tp-num">Tier 1</div><div class="tp-name">Discovery</div><div class="tp-price">$1,200 – $2,500</div></a>
+      <a href="gemstone-safaris.html#immersion" class="tier-pill"><div class="tp-num">Tier 2</div><div class="tp-name">Immersion</div><div class="tp-price">$2,800 – $5,500</div></a>
+      <a href="gemstone-safaris.html#enlightenment" class="tier-pill"><div class="tp-num">Tier 3 ✦ NEW</div><div class="tp-name">Enlightenment</div><div class="tp-price">$4,500 – $7,500</div></a>
+      <a href="gemstone-safaris.html#legacy" class="tier-pill"><div class="tp-num">Tier 4</div><div class="tp-name">Legacy</div><div class="tp-price">$8,000 – $18,000+</div></a>
+    </div>
+    <a href="gemstone-safaris.html" class="btn-gold">Explore All Tiers →</a>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="about-strip-grid">
+    <div class="about-portrait reveal-left">
+      <img src="https://i.postimg.cc/sDyXz5X6/IMG-4021.avif" alt="Jonathan Ghikas" loading="lazy" onerror="this.onerror=null;this.src='https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600'"/>
+    </div>
+    <div class="reveal-right">
+      <span class="section-label">The Scientist Behind the Stone</span>
+      <h2 class="section-title">Jonathan Ghikas</h2>
+      <div class="gold-line"></div>
+      <p style="font-size:.84rem;color:rgba(221,216,205,.72);line-height:2;margin-bottom:18px;">Jonathan Ghikas &mdash; licensed wildlife conservationist, safari guide, and founder of Nexlora Enterprise Ltd. Born and raised in Morogoro, Tanzania. With a BSc in Wildlife Science &amp; Conservation from the University of Dar es Salaam and years guiding in Mikumi National Park, he brings deep ecological and scientific understanding to ethical gemstone sourcing.</p>
+      <p style="font-size:.84rem;color:var(--gold);line-height:2;margin-bottom:28px;font-style:italic;">Luminara Gems is a premier division of Nexlora Enterprise Ltd, a unified ecosystem dedicated to showcasing the brilliance and ecological heritage of Tanzania to the world.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="about.html" class="btn-gold">Full Story →</a>
+        <a href="contact.html" class="btn-outline">Work With Jonathan →</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- GLOBAL LOGISTICS BAR -->
+<div class="logistics-bar">
+  <div class="logistics-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    <span>Insured Worldwide Shipping via DHL / FedEx</span>
+  </div>
+  <div class="logistics-divider"></div>
+  <div class="logistics-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+    <span>Secure Payments — Traditional &amp; Crypto Accepted</span>
+  </div>
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo-luminara.jpg" alt="Luminara Gems" class="brand-logo" onerror="this.style.display='none'"/>
+      <div class="brand-name">LUMINARA GEMS</div>
+      <div class="brand-sub">A Nexlora Enterprise Ltd Division</div>
+      <p>Ethically sourced Tanzanian gemstones. Verified by science. Secured on blockchain. Gemstone safaris guided by a licensed wildlife conservationist.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/255757247973" class="social-icon si-whatsapp" title="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="https://www.instagram.com/ghikasj?igsh=MXJjd2VmM2JzYjIxeg==" class="social-icon si-instagram" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61565962711465" class="social-icon si-facebook" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://vm.tiktok.com/ZS9La6Xcxgpsq-iOf7E/" class="social-icon si-tiktok" title="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#69C9D0" width="18" height="18"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        <a href="https://www.linkedin.com/in/jonathan-ghikas-509592190" class="social-icon si-linkedin" title="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      </div>
+      <div class="footer-division-logos">
+        <a href="https://ghikasadventures.com" target="_blank" rel="noopener"><img src="images/logo-ghikas.png" alt="Ghikas Adventures" onerror="this.style.display='none'"/></a>
+        <a href="sanaa-chains.html"><img src="images/logo-sanaa-chains.png" alt="Sanaa Chains" onerror="this.style.display='none'"/></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="vault.html">The Vault</a></li>
+        <li><a href="gemstone-safaris.html">Gemstone Safaris</a></li>
+        <li><a href="journal.html">Scientist's Journal</a></li>
+        <li><a href="sanaa-chains.html">Sanaa Chains</a></li>
+        <li><a href="about.html">About Jonathan</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Gemstones</h4>
+      <ul>
+        <li><a href="tanzanite.html">Tanzanite</a></li>
+        <li><a href="mahenge-spinel.html">Mahenge Spinel</a></li>
+        <li><a href="ruby.html">Tanzanian Ruby</a></li>
+        <li><a href="tsavorite.html">Tsavorite &amp; More</a></li>
+      </ul>
+      <h4 style="margin-top:22px;">Safari Tiers</h4>
+      <ul>
+        <li><a href="gemstone-safaris.html#discovery">Discovery ($1,200–$2,500)</a></li>
+        <li><a href="gemstone-safaris.html#immersion">Immersion ($2,800–$5,500)</a></li>
+        <li><a href="gemstone-safaris.html#enlightenment">Enlightenment ✦ NEW</a></li>
+        <li><a href="gemstone-safaris.html#legacy">Legacy ($8,000–$18,000+)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>💬 <a href="https://wa.me/255757247973" target="_blank">WhatsApp: +255 757 247 973</a></p>
+      <p>📞 <a href="tel:+255 621 080 433">Phone: +255 621 080 433</a></p>
+      <p>✉️ <a href="mailto:info@ghikasadventures.com">info@ghikasadventures.com</a></p>
+      <p>📍 Morogoro, Tanzania</p>
+      <p>🌐 <a href="https://ghikasadventures.com" target="_blank">ghikasadventures.com</a></p>
+      <h4 style="margin-top:20px;">Pay Securely</h4>
+      <div class="payment-icons">
+        <div class="pay-icon pay-visa">VISA</div>
+        <div class="pay-icon pay-mc">MC</div>
+        <div class="pay-icon pay-paypal">PayPal</div>
+        <div class="pay-icon pay-usdt">₮ USDT</div>
+        <div class="pay-icon pay-usdc">USDC</div>
+        <div class="pay-icon pay-stripe">Stripe</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Luminara Gems · Nexlora Enterprise Ltd · Morogoro, Tanzania · <a href="https://wa.me/255757247973" target="_blank" style="color:inherit;">+255 757 247 973</a></p>
+    <a href="index.html"><img src="images/logo-nexlora.jpg" alt="Nexlora Enterprise Ltd" class="footer-nexlora-logo" onerror="this.style.display='none'"/></a>
+  </div>
+</footer>
+<a href="https://wa.me/255757247973" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="white" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="js/main.js"></script>
+</body>
+</html>

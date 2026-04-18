@@ -1,0 +1,18 @@
+# Luminara Gems — Netlify Redirects
+
+# Clean URL support: allow /vault → /vault.html
+/vault          /vault.html         200
+/about          /about.html         200
+/contact        /contact.html       200
+/gallery        /gallery.html       200
+/journal        /journal.html       200
+/gemstone-safaris /gemstone-safaris.html 200
+/sanaa-chains   /sanaa-chains.html  200
+/tanzanite      /tanzanite.html     200
+/ruby           /ruby.html          200
+/tsavorite      /tsavorite.html     200
+/mahenge-spinel /mahenge-spinel.html 200
+/sitemap        /sitemap.html       200
+
+# Catch-all 404
+/*              /404.html           404
